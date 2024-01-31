@@ -1,5 +1,17 @@
-#!/bin/python3
-"""Makin a deck of 3d cards"""
+#!/bin/bash
+"""
+TODO: we will implement this game on stream.
+"""
+import random
+
+TITLE = """
+:::::::::  :::            :::      ::::::::  :::    ::: ::::::::::: :::      ::::::::  :::    ::: 
+:+:    :+: :+:          :+: :+:   :+:    :+: :+:   :+:      :+:   :+: :+:   :+:    :+: :+:   :+:  
++:+    +:+ +:+         +:+   +:+  +:+        +:+  +:+       +:+  +:+   +:+  +:+        +:+  +:+   
++#++:++#+  +#+        +#++:++#++: +#+        +#++:++        +#+ +#++:++#++: +#+        +#++:++    
++#+    +#+ +#+        +#+     +#+ +#+        +#+  +#+       +#+ +#+     +#+ +#+        +#+  +#+   
+#+#    #+# #+#        #+#     #+# #+#    #+# #+#   #+#  #+# #+# #+#     #+# #+#    #+# #+#   #+#  
+#########  ########## ###     ###  ########  ###    ###  #####  ###     ###  ########  ###    ###"""
 
 DECK_DICT = {
   1 : {
@@ -16,7 +28,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         A|'
- ``````````
+ ``````````  
 """},
   2 : {
     "rank"  :2,
@@ -32,7 +44,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         2|'
- ``````````
+ ``````````  
 """},
   3 : {
     "rank"  :3,
@@ -48,7 +60,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         3|'
- ``````````
+ ``````````  
 """},
   4 : {
     "rank"  :4,
@@ -64,7 +76,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         4|'
- ``````````
+ ``````````  
 """},
   5 : {
     "rank"  :5,
@@ -80,7 +92,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         5|'
- ``````````
+ ``````````  
 """},
   6 : {
     "rank"  :6,
@@ -96,7 +108,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         6|'
- ``````````
+ ``````````  
 """},
   7 : {
     "rank"  :7,
@@ -112,7 +124,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         7|'
- ``````````
+ ``````````  
 """},
   8 : {
     "rank"  :8,
@@ -128,7 +140,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         8|'
- ``````````
+ ``````````  
 """},
   9 : {
     "rank"  :9,
@@ -144,7 +156,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         9|'
- ``````````
+ ``````````  
 """},
   10 : {
     "rank"  :10,
@@ -160,7 +172,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |        10|'
- ``````````
+ ``````````  
 """},
   11 : {
     "rank"  :11,
@@ -176,7 +188,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         J|'
- ``````````
+ ``````````  
 """},
   12 : {
     "rank"  :12,
@@ -192,7 +204,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         Q|'
- ``````````
+ ``````````  
 """},
   13 : {
     "rank"  :13,
@@ -208,7 +220,7 @@ DECK_DICT = {
 |    \/    ||
 |          ||
 |         K|'
- ``````````
+ ``````````  
 """},
   14 : {
     "rank"  :1,
@@ -224,7 +236,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         A|'
- ``````````
+ ``````````  
 """},
   15 : {
     "rank"  :2,
@@ -240,7 +252,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         2|'
- ``````````
+ ``````````  
 """},
   16 : {
     "rank"  :3,
@@ -256,7 +268,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         3|'
- ``````````
+ ``````````  
 """},
   17 : {
     "rank"  :4,
@@ -272,7 +284,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         4|'
- ``````````
+ ``````````  
 """},
   18 : {
     "rank"  :5,
@@ -288,7 +300,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         5|'
- ``````````
+ ``````````  
 """},
   19 : {
     "rank"  :6,
@@ -304,7 +316,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         6|'
- ``````````
+ ``````````  
 """},
   20 : {
     "rank"  :7,
@@ -320,7 +332,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         7|'
- ``````````
+ ``````````  
 """},
   21 : {
     "rank"  :8,
@@ -336,7 +348,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         8|'
- ``````````
+ ``````````  
 """},
   22 : {
     "rank"  :9,
@@ -352,7 +364,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         9|'
- ``````````
+ ``````````  
 """},
   23 : {
     "rank"  :10,
@@ -368,7 +380,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |        10|'
- ``````````
+ ``````````  
 """},
   24 : {
     "rank"  :11,
@@ -384,7 +396,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         J|'
- ``````````
+ ``````````  
 """},
   25 : {
     "rank"  :12,
@@ -400,7 +412,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         Q|'
- ``````````
+ ``````````  
 """},
   26 : {
     "rank"  :13,
@@ -416,7 +428,7 @@ DECK_DICT = {
 |          ||
 |          ||
 |         K|'
- ``````````
+ ``````````  
 """},
   27 : {
     "rank"  :1,
@@ -432,7 +444,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         A|'
- ``````````
+ ``````````  
 """},
   28 : {
     "rank"  :2,
@@ -448,7 +460,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         2|'
- ``````````
+ ``````````  
 """},
   29 : {
     "rank"  :3,
@@ -464,7 +476,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         3|'
- ``````````
+ ``````````  
 """},
   30 : {
     "rank"  :4,
@@ -480,7 +492,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         4|'
- ``````````
+ ``````````  
 """},
   31 : {
     "rank"  :5,
@@ -496,7 +508,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         5|'
- ``````````
+ ``````````  
 """},
   32 : {
     "rank"  :6,
@@ -512,7 +524,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         6|'
- ``````````
+ ``````````  
 """},
   33 : {
     "rank"  :7,
@@ -528,7 +540,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         7|'
- ``````````
+ ``````````  
 """},
   34 : {
     "rank"  :8,
@@ -544,7 +556,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         8|'
- ``````````
+ ``````````  
 """},
   35 : {
     "rank"  :9,
@@ -560,7 +572,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         9|'
- ``````````
+ ``````````  
 """},
   36 : {
     "rank"  :10,
@@ -576,7 +588,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |        10|'
- ``````````
+ ``````````  
 """},
   37 : {
     "rank"  :11,
@@ -592,7 +604,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         J|'
- ``````````
+ ``````````  
 """},
   38 : {
     "rank"  :12,
@@ -608,7 +620,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         Q|'
- ``````````
+ ``````````  
 """},
   39 : {
     "rank"  :13,
@@ -624,7 +636,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         K|'
- ``````````
+ ``````````  
 """},
   40 : {
     "rank"  :1,
@@ -640,7 +652,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         X|'
- ``````````
+ ``````````  
 """},
   41 : {
     "rank"  :2,
@@ -656,7 +668,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         2|'
- ``````````
+ ``````````  
 """},
   42 : {
     "rank"  :3,
@@ -672,7 +684,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         3|'
- ``````````
+ ``````````  
 """},
   43 : {
     "rank"  :4,
@@ -688,7 +700,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         4|'
- ``````````
+ ``````````  
 """},
   44 : {
     "rank"  :5,
@@ -704,7 +716,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         5|'
- ``````````
+ ``````````  
 """},
   45 : {
     "rank"  :6,
@@ -720,7 +732,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         6|'
- ``````````
+ ``````````  
 """},
   46 : {
     "rank"  :7,
@@ -736,7 +748,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         7|'
- ``````````
+ ``````````  
 """},
   47 : {
     "rank"  :8,
@@ -752,7 +764,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         8|'
- ``````````
+ ``````````  
 """},
   48 : {
     "rank"  :9,
@@ -768,7 +780,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         9|'
- ``````````
+ ``````````  
 """},
   49 : {
     "rank"  :10,
@@ -784,7 +796,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |        10|'
- ``````````
+ ``````````  
 """},
   50 : {
     "rank"  :11,
@@ -800,7 +812,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         J|'
- ``````````
+ ``````````  
 """},
   51 : {
     "rank"  :12,
@@ -816,7 +828,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         Q|'
- ``````````
+ ``````````  
 """},
   52 : {
     "rank"  :13,
@@ -832,7 +844,7 @@ DECK_DICT = {
 |    /\    ||
 |          ||
 |         K|'
- ``````````
+ ``````````  
 """},
   53 : {
     "rank"  :99,
@@ -848,7 +860,7 @@ DECK_DICT = {
 ||\/\/\/\/|||
 ||/\/\/\/\|||
 |''''''''''|'
- ``````````
+ ``````````  
 """},
   54 : {
     "rank"  :99,
@@ -864,7 +876,7 @@ DECK_DICT = {
 ||\\//\\//|||
 ||//\\//\\|||
 |''''''''''|'
- ``````````
+ ``````````  
 """},
   55 : {
     "rank"  :99,
@@ -880,7 +892,7 @@ DECK_DICT = {
 || | | | ||||
 ||| | | | |||
 |''''''''''|'
- ``````````
+ ``````````  
 """},
   56 : {
     "rank"  :99,
@@ -896,7 +908,7 @@ DECK_DICT = {
 || \ \ / /|||
 ||/ / \ \ |||
 |''''''''''|'
- ``````````
+ ``````````  
 """},
   57 : {
     "rank"  :99,
@@ -913,7 +925,7 @@ DECK_DICT = {
 ||\/\/\/\/|| |
 ||/\/\/\/\|| |
 |''''''''''|,'
- ``````````
+ ``````````  
 """},
   58 : {
     "rank"  :99,
@@ -930,7 +942,7 @@ DECK_DICT = {
 ||\\//\\//|| |
 ||//\\//\\|| |
 |''''''''''|,'
- ``````````
+ ``````````  
 """},
   59 : {
     "rank"  :99,
@@ -947,7 +959,7 @@ DECK_DICT = {
 || | | | ||| |
 ||| | | | || |
 |''''''''''|,'
- ``````````
+ ``````````  
 """},
   60 : {
     "rank"  :99,
@@ -964,167 +976,139 @@ DECK_DICT = {
 || \ \ / /|| |
 ||/ / \ \ || |
 |''''''''''|,'
- ``````````
+ ``````````  
 """}
 }
 
-# for each in range(1, 61):
-#     print(DECK_DICT[each]["rank"])
-#     print(DECK_DICT[each]["suit"])
-#     print(DECK_DICT[each]["black_jack_score"])
-#     print(DECK_DICT[each]["image"])
+
+def render_cards_from_list(cardlist):
+    """
+    Renders cards to the screen
+    """
+    card_array = []
+    for card_dex in range(len(cardlist)):
+        this_list = cardlist[card_dex]["image"].splitlines()
+        card_array.append(this_list)
+        
+    if card_array[0][1] != "":
+        cal = len(card_array)
+        if cal <= 4:
+            for line_dex in range(len(card_array[0])):
+                if line_dex == 0:
+                    continue
+                for card_dex in range(cal):
+                        print(card_array[card_dex][line_dex]+"    ",end="")
+                print("")
+        else:
+            for line_dex in range(len(card_array[0])):
+                if line_dex == 0:
+                    continue
+                for card_dex in range(4):
+                        print(card_array[card_dex][line_dex]+"    ",end="")
+                print("")
+                    
+            for line_dex in range(len(card_array[0])):
+                if line_dex == 0:
+                    continue
+                for card_dex in range(4,cal):
+                        print(card_array[card_dex][line_dex]+"    ",end="")
+                print("")
 
 
+def deal_card():
+    """
+    Deals one card.
+    """
+    return DECK_DICT[random.randint(1, 52)]
 
-def render_cards(card1=0, card2=0, card3=0, card4=0, card5=0, card6=0, card7=0, card8=0):
-      
-    if card1 != 0:
-      card1Arr = DECK_DICT[card1]["image"].splitlines()
+
+def calculate_score(hand_list):
+    """
+    calculates the point value of a given blackjack hand.
+    """
+    hand = []
+    for each in range(len(hand_list)):
+        hand.append(hand_list[each]["black_jack_score"])
+    if 11 in hand and sum(hand) > 21:
+        hand.remove(11)
+        hand.append(1)
+    if sum(hand) == 21 and len(hand) == 2:
+        return 0
     else:
-          card1Arr = ["","","","","","","","","","",""]
-    if card2 != 0:
-      card2Arr = DECK_DICT[card2]["image"].splitlines()
-    else:
-      card2Arr = ["","","","","","","","","","",""]
-    if card3 != 0:
-      card3Arr = DECK_DICT[card3]["image"].splitlines()
-    else:
-      card3Arr = ["","","","","","","","","","",""]
-    if card4 != 0:
-      card4Arr = DECK_DICT[card4]["image"].splitlines()
-    else:
-      card4Arr = ["","","","","","","","","","",""]
+        return sum(hand)
 
 
-    if card5 != 0:
-          card5Arr = DECK_DICT[card5]["image"].splitlines()
-    else:
-      card5Arr = ["","","","","","","","","","",""]
-    if card6 != 0:
-          card6Arr = DECK_DICT[card6]["image"].splitlines()
-    else:
-      card6Arr = ["","","","","","","","","","",""]
-    if card7 != 0:
-          card7Arr = DECK_DICT[card7]["image"].splitlines()
-    else:
-      card7Arr = ["","","","","","","","","","",""]
-    if card8 != 0:
-          card8Arr = DECK_DICT[card8]["image"].splitlines()
-    else:
-      card8Arr = ["","","","","","","","","","",""]     
-      
-    if card1Arr[1] != "": 
-      for each in range(len(card1Arr)):
-          if each == 0:
-              continue
-          if each == 1:
-              print(card1Arr[each]+"    "+card2Arr[each]+"    "+card3Arr[each]+"    "+card4Arr[each])
-          elif each == len(card1Arr)-1:
-              print(card1Arr[each]+"      "+card2Arr[each]+"      "+card3Arr[each]+"      "+card4Arr[each])
-          else:
-              print(card1Arr[each]+"    "+card2Arr[each]+"    "+card3Arr[each]+"    "+card4Arr[each]) 
-
-    if card5Arr[1] != "":
-      for each in range(len(card1Arr)):
-          if each == 0:
-              continue
-          if each == 1:
-              print(card5Arr[each]+"    "+card6Arr[each]+"    "+card7Arr[each]+"    "+card8Arr[each])
-          elif each == len(card1Arr)-1:
-              print(card5Arr[each]+"      "+card6Arr[each]+"      "+card7Arr[each]+"      "+card8Arr[each])
-          else:
-              print(card5Arr[each]+"    "+card6Arr[each]+"    "+card7Arr[each]+"    "+card8Arr[each]) 
+def compare_hands(user_score, dealer_score):
+    """
+    Compares Hands
+    """
+    if user_score > 21 and dealer_score > 21:
+        return "You Busted!!!!!!"
+    elif user_score == dealer_score:
+        return "Push"
+    elif dealer_score == 0:
+        return "Dealer Hit BlackJack. YOU LOSE!!!!"
+    elif user_score == 0:
+        return "You Hit BlackJack. YOU WIN!!!!"
+    elif user_score > 21:
+        return "You Busted!!!!!!"
+    elif dealer_score > 21:
+        return "Dealer Busted! YOU WIN!!!!"
+    elif user_score > dealer_score:
+        return "YOU WIN!!!!"
+    elif dealer_score > user_score:
+        return "YOU LOSE!!!!"
 
 
+def run_game():
+    """
+    Run a new game to completion
+    """
+    user_cards = []
+    dealer_cards = []
+    for _ in range(2):
+        user_cards.append(deal_card())
+        dealer_cards.append(deal_card())
+    game_over = False
+    while not game_over:
+        user_score = calculate_score(user_cards)
+        dealer_score = calculate_score(dealer_cards)
+
+        print("\n"*80)
+        print("The Dealer is showing:")
+        print("")
+        temp_dealers_cards = [dealer_cards[0],DECK_DICT[54]]
+        render_cards_from_list(temp_dealers_cards)
+        print("\n\n\n\n")
+        print(f"Your Hand Scores: {user_score}")
+        render_cards_from_list(user_cards)
+        if dealer_score == 0 or user_score == 0 or user_score > 21:
+            game_over = True
+        else:
+            hit_or_stay = input("Hit or stay?(h,s): ")
+            if hit_or_stay == 'h':
+                user_cards.append(deal_card())
+                user_score = calculate_score(user_cards)
+            else:
+                game_over = True
+
+                while dealer_score < 17 and dealer_score != 0:
+                    dealer_cards.append(deal_card())
+                    dealer_score = calculate_score(dealer_cards)
+    print("\n"*80)
+    print(f"Dealer's Final Score is: {dealer_score}")
+    print("Dealer's Final Hand is:")
+    print("")
+    render_cards_from_list(dealer_cards)
+    print("\n\n")
+    print(f"Your Hand Scores: {user_score}")
+    print("")
+    render_cards_from_list(user_cards)
+    print(compare_hands(user_score, dealer_score))
 
 
+if __name__=="__main__":
 
-# render_cards(32,54)
-# render_cards(44,23)
-
-print("Test 1")
-render_cards(32,54)
-print("Test 2")
-render_cards(44,23,8)
-print("Test 3")
-render_cards(48,27,4,31,19)
-print("Test 4")
-render_cards(2,3,17,38,51,22,12,9)
-
-
-
-# DECK_DICT = {}
-    
-# for each in range(len(DECK)):
-#     DECK_DICT[each] = DECK[each]
-
-
-
-# import json
-
-# Convert and write JSON object to file
-# with open("myDeck.json", "w") as outfile: 
-#     json.dump(DECK_DICT, outfile, indent=4)
-
-# CARD_BACKS_DICT = {}
-    
-# for each in range(len(CARD_BACKS)):
-#     CARD_BACKS[each] = CARD_BACKS[each]
-
-# for each in range(5):
-#     print(CARD_BACKS[each])
-
-# import json
-
-# # Convert and write JSON object to file
-# with open("myCardBacks.json", "w") as outfile: 
-#     json.dump(CARD_BACKS, outfile, indent=4)
-
-# card1 = DECK[0]
-# card2 = DECK[1]
-# card1Arr = card1.splitlines()
-# card2Arr = card2.splitlines()
-
-
-
-# for each in DECK:
-#     print("\n"+each+"\n")
-# print(len(DECK))
-
-# mdex = 0
-
-# card1Arr = DECK[mdex].splitlines()
-# card2Arr = DECK[mdex+1].splitlines()
-# card3Arr = DECK[mdex+2].splitlines()
-# card4Arr = DECK[mdex+3].splitlines()
-
-# for each in range(len(card1Arr)):
-#     if each == 1:
-#         print(card1Arr[each]+"    "+card2Arr[each]+"    "+card3Arr[each]+"    "+card4Arr[each])
-#     elif each == len(card1Arr)-1:
-#         print(card1Arr[each]+"      "+card2Arr[each]+"      "+card3Arr[each]+"      "+card4Arr[each])
-    
-    
-#     else:
-#         print(card1Arr[each]+"    "+card2Arr[each]+"    "+card3Arr[each]+"    "+card4Arr[each]) 
-
-
-
-
-
-
-# def render_4_cards(mdex, DECK):
-    
-#     card1Arr = DECK[mdex].splitlines()
-#     card2Arr = DECK[mdex+1].splitlines()
-#     card3Arr = DECK[mdex+2].splitlines()
-#     card4Arr = DECK[mdex+3].splitlines()
-
-#     for each in range(len(card1Arr)):
-#         if each == len(card1Arr)-1 or each == 1:
-#             print(card1Arr[each]+"     "+card2Arr[each]+"     "+card3Arr[each]+"     "+card4Arr[each])
-#         else:
-#             print(card1Arr[each]+"    "+card2Arr[each]+"    "+card3Arr[each]+"    "+card4Arr[each]) 
-
-# for each in range(0,52,4):
-#     render_4_cards(each, DECK)
+    print(TITLE)
+    while input("\nWould you like to start a new game? (y,n): ").lower() == 'y':
+        run_game()
